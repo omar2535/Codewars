@@ -4,3 +4,4 @@ pub mod next_perfect_square;
 pub mod shortest_word;
 pub mod multiple_of_3_or_5;
 pub mod array_diff;
+pub mod which_are_in;
