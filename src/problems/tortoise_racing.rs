@@ -17,15 +17,13 @@ fn race(v1: i32, v2: i32, g: i32) -> Option<Vec<i32>> {
   } else {
     // equation_1: d = v1t + g = v2t => (v2 - v1)t = g
     // solve for t: g / (v2 - v1) = t
-    let t: f32 = g as f32 / (v2 - v1) as f32 + 0.0000001;
+    let mut t: i32 = (g * 3600) / (v2 - v1);
     
-    let mut time_in_secs: i32 = ((t * 60.0 * 60.0)) as i32 ;
-    
-    let hour: i32 = time_in_secs / 60_i32.pow(2);
-    time_in_secs = time_in_secs - (hour * 60_i32.pow(2));
-    let minutes: i32 = time_in_secs / 60;
-    time_in_secs = time_in_secs - (minutes * 60);
-    let seconds: i32 = time_in_secs;
+    let hour: i32 = t / 60_i32.pow(2);
+    t = t - (hour * 60_i32.pow(2));
+    let minutes: i32 = t / 60;
+    t = t - (minutes * 60);
+    let seconds: i32 = t;
 
     Some(vec![hour, minutes, seconds])
   }
@@ -36,5 +34,6 @@ fn basic_tests() {
   assert_eq!(race(720, 850, 70), Some(vec![0, 32, 18]));
   assert_eq!(race(80, 100, 40), Some(vec![2, 0, 0]));
   assert_eq!(race(80, 91, 37), Some(vec![3, 21, 49]));
+  assert_eq!(race(86, 529, 87), Some(vec![0, 11, 46]));
   assert_eq!(race(820, 81, 550), None);
 }
