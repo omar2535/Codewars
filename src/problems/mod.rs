@@ -6,3 +6,4 @@ pub mod multiple_of_3_or_5;
 pub mod array_diff;
 pub mod which_are_in;
 pub mod tortoise_racing;
+pub mod human_readable_time;
