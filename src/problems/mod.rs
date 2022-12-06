@@ -11,4 +11,5 @@ pub mod good_vs_evil;
 pub mod two_sum;
 pub mod playing_with_digits;
 pub mod directions_reduction;
+pub mod diophatine_equation;
 
