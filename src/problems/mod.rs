@@ -12,4 +12,4 @@ pub mod two_sum;
 pub mod playing_with_digits;
 pub mod directions_reduction;
 pub mod diophatine_equation;
-
+pub mod sum_of_pairs;
